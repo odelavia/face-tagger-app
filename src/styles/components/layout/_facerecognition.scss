@@ -1,0 +1,28 @@
+.face-recognition-container {
+  display: flex;
+  align-self: center;
+  justify-self: center;
+  position: relative;
+}
+
+.face-recognition {
+  margin-top: .5rem;
+}
+
+.face-recognition img {
+  flex-basis: 340px;
+  max-width: calc(100vw - 60px);
+  flex-grow: 1;
+  height: auto;
+  border-radius: 5px;
+}
+
+.bounding-box {
+  position: absolute;
+  box-shadow: 0 0 0 3px #149df2 inset;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 5px;
+}

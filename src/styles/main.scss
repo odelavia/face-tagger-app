@@ -1,0 +1,15 @@
+// @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
+
+@import './setup/base';
+
+
+@import './components/layout/_navigation.scss';
+@import './components/layout/_logo.scss';
+@import './components/layout/_rank.scss';
+@import './components/layout/_imagelinkform.scss';
+@import './components/layout/_facerecognition.scss';
+@import './components/pages/auth/_signin.scss';
+@import './components/pages/auth/_register.scss';
+
+
+// @import '../../node_modules/font-awesome/css/font-awesome.min.css';

@@ -1,0 +1,14 @@
+.logo {
+  display: flex;
+  justify-content: flex-start;
+  // font-family: 'SEGA LOGO FONT';
+  font-weight: 200;
+  font-size: 3rem;
+  color: #c38d9e
+}
+
+@media (max-width: 565px){
+.logo {
+  font-size: 40px;
+}
+}

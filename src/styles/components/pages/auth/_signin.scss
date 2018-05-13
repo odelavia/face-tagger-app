@@ -1,0 +1,189 @@
+.signin-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        'sign-header'
+        'email'
+        'pass'
+        'forgot-pass'
+        'btn'
+        'rememsign';
+    background-color: transparent;
+    border: solid 2px rgba(0,0,0,.6);
+    border-radius:.25rem;
+    margin: 30px auto;
+    // max-width: 100%;
+    // width: 50%;
+    width: 25%;
+    min-width: 13.4375rem;
+    padding: 20px;
+    justify-self: center;
+    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.2);
+}
+
+label {
+    padding: 5px 0;
+    margin: 10px 0;
+}
+
+p {
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+.sign-header {
+    grid-area: sign-header;
+    font-size: 2.5rem;
+}
+
+.email {
+    grid-area: email;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.email-input {
+    height: 28px;
+    width: 200px;
+    background-color: transparent;
+    box-shadow: 0px 0px 0px 2px rgba(0,0,0,0.6);
+    border-style: none;
+    border-radius: 5px;
+    font-size: 1.0rem;
+}
+
+.email-input:focus {
+    outline: none;
+    background-color: #00C2E2;
+    opacity: .75;
+}
+
+.pass {
+    grid-area: pass;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.pass-input {
+    height: 28px;
+    width: 200px;
+    background-color: transparent;
+    box-shadow: 0px 0px 0px 2px rgba(0,0,0,0.6);
+    border-style: none;
+    border-radius: 5px;
+    font-size: 1.0rem;
+}
+
+.pass-input:focus {
+    outline: none;
+    background-color: #00C2E2;
+    opacity: .75;
+}
+
+.forgot-pass {
+  grid-area: forgot-pass;
+  cursor: pointer;
+}
+
+
+.btn-container {
+  grid-area: btn;
+  justify-self: center;
+}
+
+
+.btn {
+  grid-area: btn;
+  justify-self: center;
+  text-align: center;
+  width: 100px;
+  padding:8px 20px 8px 20px;
+  opacity: .6;
+  background-color: transparent;
+  box-shadow: 0px 0px 0px 2px rgb(0,0,0);
+  border-style: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  margin: 40px 0 0 0;
+}
+
+.btn:hover {
+  opacity: .8;
+}
+
+.btn:focus {
+  outline: none;
+  background-color: #FFBEBE;
+}
+
+.forgot-pass {
+  margin-bottom: 10px;
+}
+
+.forgot-pass,
+.remember-text,
+.signup {
+  font-size: 18px;
+  padding-bottom: 0;
+}
+
+.remem-regis-links {
+  display: grid;
+  grid-area: rememsign;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 'remember sign';
+  align-items: center;
+  margin-top: 20px;
+}
+
+.remember {
+  grid-area: remember;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  min-width: 135px;
+}
+
+.remember .radio-input {
+  
+  // border: solid 2px black;
+  background-color: #eee;
+  // margin:0;
+  align-self: center;
+  border-style: none;
+  border: none;
+}
+
+// .radio-input{
+
+// }
+
+.signup {
+  grid-area: sign;
+  cursor: pointer;
+  justify-self: end;
+}
+
+@media (max-width: 1440px) {
+  .sign-header {
+    font-size: 28px;
+  }
+}
+
+@media (max-width:565px) {
+  .sign-header {
+    font-size: 26px;
+  }
+  
+  p {
+    font-size: 20px;
+  }
+}
