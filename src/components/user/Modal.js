@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 const modalRoot = document.getElementById('modal-root');
+console.log(modalRoot);
 
 class Modal extends React.Component {
   constructor(props) {

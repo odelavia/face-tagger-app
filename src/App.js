@@ -25,7 +25,7 @@ const particlesOptions = {
 const initialState = {
   input: '',
   imageUrl: '',
-  box: {},
+  boxes: [],
   route: 'signin',
   isProfileOpen: false,
   isSignedIn: false,
@@ -157,6 +157,13 @@ class App extends Component {
       this.setState({isSignedIn: true})
     }
     this.setState({route: route});
+  }
+  
+  toggleModal = () => {
+      this.setState(state => ({
+        ...state,
+        isProfileOpen: !state.isProfileOpen,
+      }));
   }
 
   render() {
