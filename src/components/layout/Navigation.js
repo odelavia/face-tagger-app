@@ -1,12 +1,14 @@
 import React from 'react';
 import Logo from './Logo.js';
+import ProfileIcon from '../user/ProfileIcon';
 
-const Navigation = ({ onRouteChange, isSignedIn }) => {
+const Navigation = ({ onRouteChange, isSignedIn, toggleModal }) => {
   if(isSignedIn) {
     return (
       <nav>
           <Logo />
           <a onClick={() => onRouteChange('signout')} href='' className='navlinks signout-btn'>Sign Out</a>
+          <ProfileIcon onRouteChange={onRouteChange} toggleModal={toggleModal} />
       </nav>
     );
   } else {
