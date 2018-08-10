@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { fetchWithBody, fetchWithoutBody } from './helpers'
 import Navigation from './components/layout/Navigation';
 import Profile from './components/user/Profile';
 import Modal from './components/user/Modal';
@@ -32,23 +33,10 @@ class App extends Component {
   componentDidMount() {
     const token = window.sessionStorage.getItem('token');
     if (token) {
-      fetch('http://localhost:3000/signin', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': token
-        }
-      })
-        .then(response => response.json())
+      fetchWithBody('signin', 'POST', token, undefined)
         .then(data => {
           if (data && data.id) {
-            fetch(`http://localhost:3000/profile/${data.id}`, {
-              method: 'GET',
-              headers: {
-                'Content-Type': 'application/json',
-                'Authorization': token
-              }
-            })
+            fetchWithoutBody(`profile/${data.id}`, 'GET', token)
             .then(response => response.json())
             .then(user => {
               if (user && user.email) {
@@ -101,31 +89,13 @@ class App extends Component {
   }
 
   onButtonSubmit = () => {
-    this.setState({imageUrl: this.state.input});
-      fetch('http://localhost:3000/imageurl', {
-        method: 'post',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': window.sessionStorage.getItem('token')
-        },
-        body: JSON.stringify({
-          input: this.state.input
-        })
-      })
-      .then(response => response.json())
+    const token = window.sessionStorage.getItem('token');
+    const { input, user } = this.state;
+    this.setState({imageUrl: input});
+      fetchWithBody('imageurl', 'POST', token, null, null, null, input)
       .then(response => {
         if (response) {
-          fetch('http://localhost:3000/image', {
-            method: 'put',
-            headers: {
-              'Content-Type': 'application/json',
-              'Authorization': window.sessionStorage.getItem('token')
-            },
-            body: JSON.stringify({
-              id: this.state.user.id
-            })
-          })
-          .then(response => response.json())
+          fetchWithBody('image', 'PUT', token, null, null, null, null, user.id)
           .then(count => {
             this.setState(Object.assign(this.state.user, { entries: count}))
           })
@@ -143,8 +113,6 @@ class App extends Component {
       sessionStorage.removeItem('token');
       this.setState(initialState)
     } else if (route === 'home') {
-    // } else if (this.state.isSignedIn === true ) {
-      // this.setState({route: 'home'})
       this.setState({isSignedIn: true})
       console.log('IsSignedIn is currently ', this.state.isSignedIn)
     }
@@ -177,6 +145,8 @@ class App extends Component {
           user={user}
           loadUser={this.loadUser}
           onRouteChange={this.onRouteChange}
+          onInputChange={this.onInputChange}
+          onButtonSubmit={this.onButtonSubmit}
         />
       </div>
     );

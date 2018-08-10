@@ -1,4 +1,5 @@
 import React from 'react';
+import { fetchWithBody } from '../../../helpers'
 
 class Register extends React.Component {
   constructor(props) {
@@ -23,16 +24,8 @@ class Register extends React.Component {
   }
 
   onSubmitSignIn = () => {
-    fetch('http://localhost:3000/register', {
-      method: 'post',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({
-        email: this.state.email,
-        password: this.state.password,
-        name: this.state.name
-      })
-    })
-    .then(response => response.json())
+    const { email, password, name } = this.state;
+    fetchWithBody('register', 'POST', null, email, password, name)
     .then(user => {
       if (user.id) {
         this.props.loadUser(user)

@@ -1,4 +1,5 @@
 import React from 'react';
+import { fetchWithBody } from '../../../helpers'
 
 class Signin extends React.Component {
   constructor(props) {
@@ -22,15 +23,8 @@ class Signin extends React.Component {
   }
 
   onSubmitSignIn = () => {
-    fetch('http://localhost:3000/signin', {
-      method: 'post',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({
-        email: this.state.signInEmail,
-        password: this.state.signInPassword
-      })
-    })
-      .then(response => response.json())
+    const { signInEmail, signInPassword } = this.state;
+    fetchWithBody('signin', 'POST', null, signInEmail, signInPassword)
       .then(data => {
         if (data && data.success === "true") {
           this.saveAuthTokenInSessions(data.token)
