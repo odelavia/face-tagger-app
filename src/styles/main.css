@@ -10,7 +10,7 @@ body {
   justify-content: center;
   font-family: 'Lato', sans-serif;
   color: white;
-  background-color: #6AD1CE;
+  background-color: #00D798;
   min-width: 320px;
   font-size: 20px; }
 
@@ -80,9 +80,9 @@ nav {
 .logo {
   display: flex;
   justify-content: flex-start;
-  font-weight: 200;
+  font-weight: 400;
   font-size: 3rem;
-  color: #c38d9e; }
+  color: white; }
 
 @media (max-width: 565px) {
   .logo {
@@ -103,6 +103,7 @@ nav {
   background-color: #e8a87c;
   background: radial-gradient(circle farthest-side at 0% 50%, #e8a87c 23.5%, rgba(240, 166, 17, 0) 0) 21px 30px, radial-gradient(circle farthest-side at 0% 50%, #e27d60 24%, rgba(240, 166, 17, 0) 0) 19px 30px, linear-gradient(#e8a87c 14%, rgba(240, 166, 17, 0) 0, rgba(240, 166, 17, 0) 85%, #e8a87c 0) 0 0, linear-gradient(150deg, #e8a87c 24%, #e27d60 0, #e27d60 26%, rgba(240, 166, 17, 0) 0, rgba(240, 166, 17, 0) 74%, #e27d60 0, #e27d60 76%, #e8a87c 0) 0 0, linear-gradient(30deg, #e8a87c 24%, #e27d60 0, #e27d60 26%, rgba(240, 166, 17, 0) 0, rgba(240, 166, 17, 0) 74%, #e27d60 0, #e27d60 76%, #e8a87c 0) 0 0, linear-gradient(90deg, #e27d60 2%, #e8a87c 0, #e8a87c 98%, #e27d60 0%) 0 0 #e8a87c;
   background-size: 40px 60px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.19), 0 3px 3px rgba(0, 0, 0, 0.23);
   padding: 30px;
   border-radius: 5px; }
 
@@ -187,7 +188,8 @@ p {
     width: 440px;
     background-color: white;
     border-radius: 4px;
-    padding: 2rem; }
+    padding: 2rem;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.19), 0 3px 3px rgba(0, 0, 0, 0.23); }
     .profile-modal article main {
       display: flex;
       flex-direction: column;
@@ -225,7 +227,10 @@ p {
         font-size: 16px;
         padding: 8px;
         border-radius: 4px;
-        border: solid 1px black; }
+        border: solid 1px black;
+        outline: none; }
+        .profile-modal article main input:focus {
+          border: solid 1.5px #DE3968; }
     .profile-modal article .modal-btns {
       display: flex;
       justify-content: space-between;
@@ -234,7 +239,7 @@ p {
         font-size: 16px;
         border-radius: 4px;
         padding: 10px 20px;
-        background-color: #cecece; }
+        background-color: #DE3968; }
     .profile-modal article .modal-close {
       height: 28px;
       line-height: .43;
@@ -259,7 +264,8 @@ p {
     .icon-wrapper .icon-container .dropdown-toggle .icon-img {
       height: 64px;
       width: 64px;
-      border-radius: 50%; }
+      border-radius: 50%;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.19), 0 3px 3px rgba(0, 0, 0, 0.23); }
   .icon-wrapper .dropdown-menu {
     margin-top: 0px;
     background-color: rgba(255, 255, 255, 0.5);
@@ -294,24 +300,28 @@ p {
   grid-template-columns: 1fr;
   grid-template-areas: 'sign-header' 'email' 'pass' 'forgot-pass' 'btn' 'rememsign';
   background-color: transparent;
-  border: solid 2px rgba(0, 0, 0, 0.6);
-  border-radius: .25rem;
+  border-radius: 4px;
   margin: 30px auto;
   width: 25%;
-  min-width: 16rem;
+  min-width: 18rem;
+  height: 455px;
   padding: 20px;
   justify-self: center;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2); }
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); }
 
 label {
+  color: black;
+  opacity: .8;
   padding: 5px 0;
   margin: 10px 0; }
-
-p {
-  margin: 0;
-  padding-bottom: 10px; }
+  label p:not(.remember-text) {
+    display: flex;
+    justify-self: flex-start;
+    margin: 0 0 0 25px;
+    padding-bottom: 10px; }
 
 .sign-header {
+  color: black;
   grid-area: sign-header;
   font-size: 2.5rem; }
 
@@ -319,47 +329,42 @@ p {
   grid-area: email;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center; }
-
-.email-input {
-  height: 28px;
-  width: 200px;
-  background-color: transparent;
-  box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.6);
-  border-style: none;
-  border-radius: 5px;
-  font-size: 1.0rem; }
-
-.email-input:focus {
-  outline: none;
-  background-color: #00C2E2;
-  opacity: .75; }
 
 .pass {
   grid-area: pass;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
   margin-top: 0;
   margin-bottom: 5px; }
 
+.email-input,
 .pass-input {
+  display: flex;
+  align-self: center;
   height: 28px;
   width: 200px;
-  background-color: transparent;
-  box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.6);
   border-style: none;
-  border-radius: 5px;
-  font-size: 1.0rem; }
+  border-radius: 4px;
+  font-size: 1.0rem;
+  background-color: white; }
 
+.email-input:focus,
 .pass-input:focus {
+  height: 28px;
+  width: 200px;
+  border-style: none;
+  border-radius: 4px;
+  font-size: 1.0rem;
+  background-color: white;
   outline: none;
-  background-color: #00C2E2;
-  opacity: .75; }
+  border: solid 1.5px #DE3968;
+  opacity: .8; }
 
 .forgot-pass {
+  color: black;
+  opacity: .8;
   grid-area: forgot-pass;
   cursor: pointer; }
 
@@ -373,20 +378,17 @@ p {
   text-align: center;
   width: 100px;
   padding: 8px 20px 8px 20px;
-  opacity: .6;
-  background-color: transparent;
-  box-shadow: 0px 0px 0px 2px black;
+  opacity: 1;
+  color: white;
+  background-color: #DE3968;
   border-style: none;
   border-radius: 5px;
   font-size: 1rem;
-  margin: 40px 0 0 0; }
+  margin: 60px 0 0 0; }
 
 .btn:hover {
-  opacity: .8; }
-
-.btn:focus {
-  outline: none;
-  background-color: #FFBEBE; }
+  opacity: .9;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.19), 0 3px 3px rgba(0, 0, 0, 0.23); }
 
 .forgot-pass {
   margin-bottom: 10px; }
@@ -400,10 +402,9 @@ p {
 .remem-regis-links {
   display: grid;
   grid-area: rememsign;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: auto auto;
   grid-template-areas: 'remember sign';
-  align-items: center;
-  margin-top: 20px; }
+  align-items: center; }
 
 .remember {
   grid-area: remember;
@@ -422,7 +423,8 @@ p {
 
 .signup {
   grid-area: sign;
-  color: white;
+  color: black;
+  opacity: .8;
   text-decoration: none;
   cursor: pointer;
   justify-self: end; }
@@ -441,14 +443,17 @@ p {
   display: grid;
   grid-template-areas: 'sign-header' 'name' 'email' 'pass' 'btn' 'link';
   background-color: transparent;
-  border: solid 2px rgba(0, 0, 0, 0.6);
   border-radius: .25rem;
   margin: 30px auto;
   width: 25%;
-  min-width: 16rem;
+  min-width: 18rem;
+  height: 455px;
   padding: 20px;
   justify-self: center;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2); }
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); }
+  .register-container .signup {
+    margin-top: 20px;
+    grid-area: link; }
 
 .register-container .name {
   grid-area: name;
@@ -460,8 +465,7 @@ p {
 .register-container .name-input {
   height: 28px;
   width: 200px;
-  background-color: transparent;
-  box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.6);
+  background-color: ewhit;
   border-style: none;
   border-radius: 5px;
   font-size: 1.0rem; }

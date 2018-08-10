@@ -6,13 +6,14 @@
   //#e8a87c
   //#e27d60
   background:
-radial-gradient(circle farthest-side at 0% 50%,#e8a87c 23.5%,rgba(240,166,17,0) 0)21px 30px,
-radial-gradient(circle farthest-side at 0% 50%,#e27d60 24%,rgba(240,166,17,0) 0)19px 30px,
-linear-gradient(#e8a87c 14%,rgba(240,166,17,0) 0, rgba(240,166,17,0) 85%,#e8a87c 0)0 0,
-linear-gradient(150deg,#e8a87c 24%,#e27d60 0,#e27d60 26%,rgba(240,166,17,0) 0,rgba(240,166,17,0) 74%,#e27d60 0,#e27d60 76%,#e8a87c 0)0 0,
-linear-gradient(30deg,#e8a87c 24%,#e27d60 0,#e27d60 26%,rgba(240,166,17,0) 0,rgba(240,166,17,0) 74%,#e27d60 0,#e27d60 76%,#e8a87c 0)0 0,
-linear-gradient(90deg,#e27d60 2%,#e8a87c 0,#e8a87c 98%,#e27d60 0%)0 0 #e8a87c;
-background-size:40px 60px;
+  radial-gradient(circle farthest-side at 0% 50%,#e8a87c 23.5%,rgba(240,166,17,0) 0)21px 30px,
+  radial-gradient(circle farthest-side at 0% 50%,#e27d60 24%,rgba(240,166,17,0) 0)19px 30px,
+  linear-gradient(#e8a87c 14%,rgba(240,166,17,0) 0, rgba(240,166,17,0) 85%,#e8a87c 0)0 0,
+  linear-gradient(150deg,#e8a87c 24%,#e27d60 0,#e27d60 26%,rgba(240,166,17,0) 0,rgba(240,166,17,0) 74%,#e27d60 0,#e27d60 76%,#e8a87c 0)0 0,
+  linear-gradient(30deg,#e8a87c 24%,#e27d60 0,#e27d60 26%,rgba(240,166,17,0) 0,rgba(240,166,17,0) 74%,#e27d60 0,#e27d60 76%,#e8a87c 0)0 0,
+  linear-gradient(90deg,#e27d60 2%,#e8a87c 0,#e8a87c 98%,#e27d60 0%)0 0 #e8a87c;
+  background-size:40px 60px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.19), 0 3px 3px rgba(0, 0, 0, 0.23);
   padding: 30px;
   border-radius: 5px;
 
