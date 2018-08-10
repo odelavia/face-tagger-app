@@ -1,0 +1,51 @@
+.icon-wrapper {
+ grid-area: profileIcon;
+ display: flex;
+ justify-content: flex-end;
+ height: 64px;
+ width: 64px;
+
+ position: relative;
+ .icon-container {
+  .dropdown-toggle {
+   height: 64px;
+
+   .icon-img {
+    height: 64px;
+    width: 64px;
+    border-radius: 50%;
+   }
+  }
+ }
+ .dropdown-menu {
+  margin-top: 0px;
+  background-color: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  flex-direction: column;
+  will-change: transform;
+  border-radius: 4px;
+  min-width: 10rem;
+  padding: 0.5rem 0;
+  margin: 0.125rem 0 0;
+  font-size: 1rem;
+  color: #212529;
+  text-align: left;
+  box-shadow: 4px 4px 8px 0 rgba( 0, 0, 0, .2 );
+  transform: translate3d(-95px, -10px, 0px);
+
+  .dropdown-item {
+   text-decoration: none;
+   display: block;
+   width: 100%;
+   padding: 0.25rem 1.5rem;
+   clear: both;
+   font-weight: 400;
+   color: #212529;
+   text-align: inherit;
+   white-space: nowrap;
+   background-color: transparent;
+   border: 0;
+   cursor: pointer;
+  }
+ }
+}

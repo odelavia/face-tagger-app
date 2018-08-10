@@ -42,6 +42,7 @@ class Register extends React.Component {
   }
 
   render() {
+    const { onRouteChange } = this.props;
     return (
           <div className="register-container">
             <form id="sign_up">
@@ -56,10 +57,11 @@ class Register extends React.Component {
               </label>
               <label className='pass'>
                   <p>Password</p>
-                  <input className='pass-input' onClick={this.onPasswordChange} />
+                  <input className='pass-input' onChange={this.onPasswordChange} />
               </label>
             </form>
             <button className='btn' onClick={this.onSubmitSignIn}>Submit</button>
+            <p onClick={() => onRouteChange('signin')} className='signup'>Sign In</p>
           </div>
     );
   }

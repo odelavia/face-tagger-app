@@ -1,10 +1,12 @@
 .register-container {
+    display: grid;
     grid-template-areas:
         'sign-header'
         'name'
         'email'
         'pass'
-        'btn';
+        'btn'
+        'link';
     background-color: transparent;
     border: solid 2px rgba(0,0,0,.6);
     border-radius:.25rem;
@@ -52,4 +54,11 @@
     color: rgba(0,0,0,0.8);
     text-decoration: none;
     cursor: pointer;
+}
+
+.register-link {
+    color: white;
+    text-decoration: none;
+    margin-top: 20px;
+    grid-area: link;
 }

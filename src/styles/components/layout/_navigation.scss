@@ -1,8 +1,8 @@
 nav {
     display: grid;
-    grid-template-columns: 1fr 10fr 1fr;
+    grid-template-columns: 1fr 10fr 64px;
     align-items: center;
-    grid-template-areas: 'logo . links'
+    grid-template-areas: 'logo . profileIcon'
   }
   
   .navlinks {

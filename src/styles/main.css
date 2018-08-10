@@ -38,9 +38,9 @@ button {
 
 nav {
   display: grid;
-  grid-template-columns: 1fr 10fr 1fr;
+  grid-template-columns: 1fr 10fr 64px;
   align-items: center;
-  grid-template-areas: 'logo . links'; }
+  grid-template-areas: 'logo . profileIcon'; }
 
 .navlinks {
   grid-area: links;
@@ -182,15 +182,112 @@ p {
   display: flex;
   align-items: center;
   justify-content: center; }
+  .profile-modal article {
+    position: relative;
+    width: 440px;
+    background-color: white;
+    border-radius: 4px;
+    padding: 2rem; }
+    .profile-modal article main {
+      display: flex;
+      flex-direction: column;
+      width: 340px;
+      color: black; }
+      .profile-modal article main img {
+        display: flex;
+        align-self: flex-start;
+        margin: 0;
+        width: 64px;
+        height: 64px;
+        border-radius: 50px; }
+      .profile-modal article main h1, .profile-modal article main h4 {
+        font-weight: 300; }
+      .profile-modal article main h1 {
+        margin: 21px 0; }
+      .profile-modal article main h4 {
+        margin: 0 0 8px 0; }
+      .profile-modal article main p {
+        font-size: 16px;
+        font-weight: 400;
+        margin: 0 0 16px 0;
+        padding: 0; }
+      .profile-modal article main hr {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        border: 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        width: 100%; }
+      .profile-modal article main label {
+        font-size: 16px;
+        margin: 8px 0;
+        padding: 0; }
+      .profile-modal article main input {
+        font-size: 16px;
+        padding: 8px;
+        border-radius: 4px;
+        border: solid 1px black; }
+    .profile-modal article .modal-btns {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 32px; }
+      .profile-modal article .modal-btns .solid-button {
+        font-size: 16px;
+        border-radius: 4px;
+        padding: 10px 20px;
+        background-color: #cecece; }
+    .profile-modal article .modal-close {
+      height: 28px;
+      line-height: .43;
+      top: 0;
+      color: black;
+      font-size: 3rem;
+      font-style: bold;
+      cursor: pointer; }
+      .profile-modal article .modal-close:hover {
+        color: grey;
+        cursor: pointer; }
 
-.modal-close {
-  font-size: 3rem;
-  font-style: bold;
-  cursor: pointer; }
-
-.modal-close:hover {
-  color: grey;
-  cursor: pointer; }
+.icon-wrapper {
+  grid-area: profileIcon;
+  display: flex;
+  justify-content: flex-end;
+  height: 64px;
+  width: 64px;
+  position: relative; }
+  .icon-wrapper .icon-container .dropdown-toggle {
+    height: 64px; }
+    .icon-wrapper .icon-container .dropdown-toggle .icon-img {
+      height: 64px;
+      width: 64px;
+      border-radius: 50%; }
+  .icon-wrapper .dropdown-menu {
+    margin-top: 0px;
+    background-color: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    flex-direction: column;
+    will-change: transform;
+    border-radius: 4px;
+    min-width: 10rem;
+    padding: 0.5rem 0;
+    margin: 0.125rem 0 0;
+    font-size: 1rem;
+    color: #212529;
+    text-align: left;
+    box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transform: translate3d(-95px, -10px, 0px); }
+    .icon-wrapper .dropdown-menu .dropdown-item {
+      text-decoration: none;
+      display: block;
+      width: 100%;
+      padding: 0.25rem 1.5rem;
+      clear: both;
+      font-weight: 400;
+      color: #212529;
+      text-align: inherit;
+      white-space: nowrap;
+      background-color: transparent;
+      border: 0;
+      cursor: pointer; }
 
 .signin-container {
   display: grid;
@@ -201,7 +298,7 @@ p {
   border-radius: .25rem;
   margin: 30px auto;
   width: 25%;
-  min-width: 13.4375rem;
+  min-width: 16rem;
   padding: 20px;
   justify-self: center;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2); }
@@ -325,6 +422,8 @@ p {
 
 .signup {
   grid-area: sign;
+  color: white;
+  text-decoration: none;
   cursor: pointer;
   justify-self: end; }
 
@@ -339,7 +438,8 @@ p {
     font-size: 20px; } }
 
 .register-container {
-  grid-template-areas: 'sign-header' 'name' 'email' 'pass' 'btn';
+  display: grid;
+  grid-template-areas: 'sign-header' 'name' 'email' 'pass' 'btn' 'link';
   background-color: transparent;
   border: solid 2px rgba(0, 0, 0, 0.6);
   border-radius: .25rem;
@@ -380,3 +480,9 @@ p {
   color: rgba(0, 0, 0, 0.8);
   text-decoration: none;
   cursor: pointer; }
+
+.register-link {
+  color: white;
+  text-decoration: none;
+  margin-top: 20px;
+  grid-area: link; }

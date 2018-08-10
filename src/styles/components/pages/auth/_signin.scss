@@ -15,7 +15,7 @@
     // max-width: 100%;
     // width: 50%;
     width: 25%;
-    min-width: 13.4375rem;
+    min-width: 16rem;
     padding: 20px;
     justify-self: center;
     box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.2);
@@ -168,6 +168,8 @@ p {
 
 .signup {
   grid-area: sign;
+  color: white;
+  text-decoration: none;
   cursor: pointer;
   justify-self: end;
 }

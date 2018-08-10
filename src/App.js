@@ -1,26 +1,9 @@
 import React, { Component } from 'react';
-import Particles from 'react-particles-js';
-import FaceRecognition from './components/layout/FaceRecognition';
 import Navigation from './components/layout/Navigation';
-import Signin from './components/pages/auth/Signin';
-import Register from './components/pages/auth/Register';
-import ImageLinkForm from './components/layout/ImageLinkForm';
-import Rank from './components/layout/Rank';
 import Profile from './components/user/Profile';
 import Modal from './components/user/Modal';
+import AppRoutes from './components/routes/AppRoutes';
 import './styles/main.css';
-
-const particlesOptions = {
-  particles: {
-    number: {
-      value: 30,
-      density: {
-        enable: true,
-        value_area: 800
-      }
-    }
-  }
-}
 
 const initialState = {
   input: '',
@@ -71,6 +54,9 @@ class App extends Component {
               if (user && user.email) {
                 this.loadUser(user)
                 this.onRouteChange('home');
+                // this.setState({
+                //   isSignedIn: true
+                // })
               }
             })
           }
@@ -151,14 +137,19 @@ class App extends Component {
   }
 
   onRouteChange = (route) => {
+    console.log('route is currently ', route)
+    console.log('IsSignedIn is currently ', this.state.isSignedIn)
     if (route === 'signout') {
       this.setState(initialState)
     } else if (route === 'home') {
+    // } else if (this.state.isSignedIn === true ) {
+      // this.setState({route: 'home'})
       this.setState({isSignedIn: true})
+      console.log('IsSignedIn is currently ', this.state.isSignedIn)
     }
     this.setState({route: route});
   }
-  
+
   toggleModal = () => {
       this.setState(state => ({
         ...state,
@@ -170,9 +161,6 @@ class App extends Component {
     const { isSignedIn, imageUrl, route, boxes, isProfileOpen, user } = this.state;
     return (
       <div className="App">
-         <Particles className='particles'
-          params={particlesOptions}
-        />
         <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange} toggleModal={this.toggleModal} />
         {
           isProfileOpen &&
@@ -180,24 +168,15 @@ class App extends Component {
             <Profile isProfileOpen={isProfileOpen} toggleModal={this.toggleModal} user={user} loadUser={this.loadUser} />
           </Modal>
         }
-        { route === 'home'
-          ? <div>
-              <Rank
-                name={this.state.user.name}
-                entries={this.state.user.entries}
-              />
-              <ImageLinkForm
-                onInputChange={this.onInputChange}
-                onButtonSubmit={this.onButtonSubmit}
-              />
-              <FaceRecognition  boxes={boxes} imageUrl={imageUrl} />
-            </div>
-          : (
-             route === 'signin'
-             ? <Signin loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
-             : <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
-            )
-        }
+        <AppRoutes
+          isSignedIn={isSignedIn}
+          route={route}
+          boxes={boxes}
+          imageUrl={imageUrl}
+          user={user}
+          loadUser={this.loadUser}
+          onRouteChange={this.onRouteChange}
+        />
       </div>
     );
   }

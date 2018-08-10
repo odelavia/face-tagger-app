@@ -59,18 +59,18 @@ class Profile extends Component {
             <h4>{`Images submitted: ${user.entries}`}</h4>
             <p>{`Member since: ${new Date(user.joined).toLocaleDateString()}`}</p>
             <hr />
-            <label className='mt2 fw6' htmlFor='user-name'>Name:</label>
+            <label className='' htmlFor='user-name'>Name:</label>
             <input onChange={this.onFormChange} type='text' name='user-name' className='pa2 ba w-100' placeholder={name}></input>
-            <label className='mt2 fw6' htmlFor='user-age'>Age:</label>
+            <label className='' htmlFor='user-age'>Age:</label>
             <input onChange={this.onFormChange} type='text' name='user-age' className='pa2 ba w-100' placeholder={age}></input>
-            <label className='mt2 fw6' htmlFor='user-pet'>Favourite Pet:</label>
+            <label className='' htmlFor='user-pet'>Favourite Pet:</label>
             <input onChange={this.onFormChange} type='text' name='user-pet' className='pa2 ba w-100' placeholder={pet}></input>
-            <div className='mt4' style={{ display: 'flex', justifyContent: 'space-evenly'}}>
-              <button className='b pa2 grow pointer hover-white w-40 bg-light-blue b--black-20'
+            <div className='modal-btns'>
+              <button className='solid-button'
                 onClick={() => this.onProfileUpdate({name, age, pet})}>
                 Save
               </button>
-              <button className='b pa2 grow pointer hover-white w-40 bg-light-red b--black-20'
+              <button className='solid-button'
                 onClick={toggleModal}>
                 Cancel
               </button>
