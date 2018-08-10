@@ -19,9 +19,9 @@ const AppRoutes = ({ route, boxes, imageUrl, user, isSignedIn, onInputChange, on
           route === 'leaderboards'
           ? <Leaderboards />
           : (
-            route === 'register'
-            ? <Register loadUser={loadUser} onRouteChange={onRouteChange}/>
-            : <Signin loadUser={loadUser} onRouteChange={onRouteChange}/>
+            route === 'signin' || route === 'signout'
+            ? <Signin loadUser={loadUser} onRouteChange={onRouteChange}/>
+            : <Register loadUser={loadUser} onRouteChange={onRouteChange}/>
             )
         )
     }

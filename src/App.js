@@ -140,6 +140,7 @@ class App extends Component {
     console.log('route is currently ', route)
     console.log('IsSignedIn is currently ', this.state.isSignedIn)
     if (route === 'signout') {
+      sessionStorage.removeItem('token');
       this.setState(initialState)
     } else if (route === 'home') {
     // } else if (this.state.isSignedIn === true ) {
