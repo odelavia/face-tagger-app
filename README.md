@@ -1,5 +1,4 @@
-# face-tagger-api
-You'll need to also clone and run the front-end for this app. It can be found at https://github.com/odelavia/face-tagger-app
+# face-tagger-app
 
 1. Clone this repo
 2. Run `npm install`
