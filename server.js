@@ -4,13 +4,15 @@ const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt-nodejs');
 const cors = require('cors');
 const knex = require('knex');
-const keys = require('./config/keys');
 
+const keys = require('./config/keys');
 const register = require('./controllers/register');
 const signin = require('./controllers/signin');
 const profile = require('./controllers/profile');
 const image = require('./controllers/image');
 const auth = require('./controllers/authorization');
+
+const port = process.env.PORT || 3000;
 
 const db = knex({
   client: 'pg',
@@ -34,6 +36,6 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname+'/client/build/index.html'));
 });
 
-app.listen(process.env.PORT || 3000, ()=> {
-  console.log('app is running on port 3000');
+app.listen(port, ()=> {
+  console.log(`App is listening on port ${port}`);
 })

@@ -1,6 +1,10 @@
+import keys.SERVER_NAME as SERVER_NAME from '../../../config/keys'
+
+// fetch(`http://localhost:3000/${route}`, {
+
 exports.fetchWithoutBody = (route, method, headerAuthorization, body) => {
   return (
-    fetch(`http://localhost:3000/${route}`, {
+    fetch(`${SERVER_NAME + route}`, {
       method: method,
       headers: {
         'Content-Type': 'application/json',
