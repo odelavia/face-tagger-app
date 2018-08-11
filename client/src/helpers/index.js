@@ -1,6 +1,4 @@
-import keys.SERVER_NAME as SERVER_NAME from '../../../config/keys'
-
-// fetch(`http://localhost:3000/${route}`, {
+const { SERVER_NAME } = require('../config/keys');
 
 exports.fetchWithoutBody = (route, method, headerAuthorization, body) => {
   return (
