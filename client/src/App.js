@@ -91,19 +91,23 @@ class App extends Component {
   onButtonSubmit = () => {
     const token = window.sessionStorage.getItem('token');
     const { input, user } = this.state;
-    this.setState({imageUrl: input});
-      fetchWithBody('imageurl', 'POST', token, null, null, null, input)
-      .then(response => {
-        if (response) {
-          fetchWithBody('image', 'PUT', token, null, null, null, null, user.id)
-          .then(count => {
-            this.setState(Object.assign(this.state.user, { entries: count}))
-          })
-          .catch(console.log)
-        }
-        this.displayFaceBox(this.calculateFaceLocation(response))
-      })
-      .catch(err => console.log(err));
+    if (input.length > 0) {
+      this.setState({imageUrl: input});
+        fetchWithBody('imageurl', 'POST', token, null, null, null, input)
+        .then(response => {
+          if (response) {
+            fetchWithBody('image', 'PUT', token, null, null, null, null, user.id)
+            .then(count => {
+              this.setState(Object.assign(this.state.user, { entries: count}))
+            })
+            .catch(console.log)
+          }
+          this.displayFaceBox(this.calculateFaceLocation(response))
+        })
+        .catch(err => console.log(err));
+    } else {
+      console.log('add an image first')
+    }
   }
 
   onRouteChange = (route) => {
