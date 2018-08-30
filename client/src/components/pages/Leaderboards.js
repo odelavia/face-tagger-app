@@ -28,7 +28,7 @@ class Leaderboards extends Component {
           <div className="table-row">
             <div>{user.name}</div>
             <div>{user.entries}</div>
-            <div>{user.joined}</div>
+            <div>{new Date(user.joined).toLocaleDateString()}</div>
             <div>{user.age}</div>
           </div>
         </div>
@@ -39,10 +39,10 @@ class Leaderboards extends Component {
       <h1>Leaderboards</h1>
       <div className="leaderboard-table">
         <div className="col-names">
-          <div className="col-name first">name</div>
-          <div className="col-name">rank</div>
-          <div className="col-name">joined</div>
-          <div className="col-name last">age</div>
+          <div className="col-name first">Name</div>
+          <div className="col-name">Rank</div>
+          <div className="col-name">Joined</div>
+          <div className="col-name last">Age</div>
         </div>
         {loadUsers}
       </div>
