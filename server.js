@@ -9,6 +9,7 @@ const keys = require('./config/keys');
 const register = require('./controllers/register');
 const signin = require('./controllers/signin');
 const profile = require('./controllers/profile');
+const leaderboards = require('./controllers/leaderboards');
 const image = require('./controllers/image');
 const auth = require('./controllers/authorization');
 
@@ -28,10 +29,11 @@ app.use(bodyParser.json());
 
 app.post('/signin', signin.signinAuthentication(db, bcrypt))
 app.post('/register', (req, res) => { register.handleRegister(req, res, db, bcrypt) })
-app.get('/profile/:id', auth.requireAuth, (req, res) => { profile.handleProfileGet(req, res, db)})
-app.post('/profile/:id', auth.requireAuth, (req, res) => { profile.handleProfileUpdate(req, res, db)})
+app.get('/profile/:id', auth.requireAuth, (req, res) => { profile.handleProfileGet(req, res, db) })
+app.post('/profile/:id', auth.requireAuth, (req, res) => { profile.handleProfileUpdate(req, res, db) })
 app.put('/image', auth.requireAuth, (req, res) => { image.handleImage(req, res, db)})
-app.post('/imageurl', auth.requireAuth, (req, res) => { image.handleApiCall(req, res)})
+app.post('/imageurl', auth.requireAuth, (req, res) => { image.handleApiCall(req, res) })
+app.get('/leaderboards', (req, res) => { leaderboards.handleGetAllUsers(req, res, db) })
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname+'/client/build/index.html'));
 });
