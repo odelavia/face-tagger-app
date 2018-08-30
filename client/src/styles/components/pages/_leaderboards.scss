@@ -1,0 +1,35 @@
+.leaderboard-table {
+  border-radius: 4px;
+  background-color: pink;
+  overflow: hidden;
+}
+
+.col-names {
+ display: flex;
+}
+
+.col-name {
+ width: 25%;
+ // border: solid 1px black;
+
+ &.first{
+  border-top-left-radius: 4px;
+ }
+
+ &.last{
+  border-top-right-radius: 4px;
+ }
+}
+
+.table-rows {
+
+
+ .table-row {
+  display: flex;
+  width: 100%;
+
+  & div {
+   width: 25%;
+  }
+ }
+}

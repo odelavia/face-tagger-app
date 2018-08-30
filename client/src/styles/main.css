@@ -490,3 +490,24 @@ label {
   text-decoration: none;
   margin-top: 20px;
   grid-area: link; }
+
+.leaderboard-table {
+  border-radius: 4px;
+  background-color: pink;
+  overflow: hidden; }
+
+.col-names {
+  display: flex; }
+
+.col-name {
+  width: 25%; }
+  .col-name.first {
+    border-top-left-radius: 4px; }
+  .col-name.last {
+    border-top-right-radius: 4px; }
+
+.table-rows .table-row {
+  display: flex;
+  width: 100%; }
+  .table-rows .table-row div {
+    width: 25%; }
