@@ -42,32 +42,8 @@ nav {
   align-items: center;
   grid-template-areas: 'logo . profileIcon'; }
 
-.navlinks {
-  grid-area: links;
-  display: grid;
-  justify-self: flex-end;
-  grid-template-columns: 1fr 1fr; }
-
-.signout-btn {
-  display: flex;
-  justify-content: center;
-  font-size: 1.5rem;
-  min-width: 90px;
-  color: #e27d60;
-  text-decoration: none;
+.logo {
   cursor: pointer; }
-
-.register-btn {
-  display: flex;
-  justify-content: center;
-  font-size: 1.5rem;
-  min-width: 90px;
-  color: #e27d60;
-  text-decoration: none;
-  cursor: pointer; }
-
-.signout-btn:hover {
-  color: #e8a87c; }
 
 @media (max-width: 565px) {
   .navlinks {
@@ -258,7 +234,8 @@ p {
   justify-content: flex-end;
   height: 64px;
   width: 64px;
-  position: relative; }
+  position: relative;
+  cursor: pointer; }
   .icon-wrapper .icon-container .dropdown-toggle {
     position: relative;
     height: 64px; }

@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Logo = () => {
+const Logo = ({ onRouteChange }) => {
     return (
-        <div className='logo'>
+        <a className='logo' onClick={() => onRouteChange('home')}>
             FaceTagger
-        </div>
+        </a>
     );
 }
 

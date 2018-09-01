@@ -6,7 +6,7 @@ const Navigation = ({ onRouteChange, isSignedIn, toggleModal, user }) => {
   if(isSignedIn) {
     return (
       <nav>
-          <Logo />
+          <Logo onRouteChange={onRouteChange}/>
           <ProfileIcon onRouteChange={onRouteChange} toggleModal={toggleModal} user={user}/>
       </nav>
     );
