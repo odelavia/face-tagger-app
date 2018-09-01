@@ -7,6 +7,7 @@
 
   .table-col-names {
     display: flex;
+    padding-bottom: 10px;
 
     .table-col-name {
       width: 25%;
@@ -26,6 +27,7 @@
 
   .table-rows {
     border-top: solid 1px rgba(0, 0, 0, .25);
+    // padding: 5px 0;
 
     .table-row {
       display: flex;
@@ -34,26 +36,56 @@
       text-align: left;
       height: 100%;
       width: 100%;
-      padding: 5px 0;
 
       & div {
-      width: 25%;
-      margin-left: 8%;
-      text-align: center;
+        display: flex;
+        width: 25%;
+        margin-left: 8%;
+        justify-content: center;
+        align-items: center;
       }
 
       & .leaderboard-avatars {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         min-width: 50px;
         max-width: 50px;
         min-height: 50px;
         max-height: 50px;
         border-radius: 25px;
-        background-color: grey;
         margin-left: 0;
+
+        img {
+          min-width: 50px;
+          max-width: 50px;
+          min-height: 50px;
+          max-height: 50px;
+          border-radius: 25px;
+        }
+
+        & .avatar-initial {
+          position: absolute;
+          display: block;
+          min-width: 28px;
+          max-width: 28px;
+          min-height: 28px;
+          max-height: 28px;
+          margin-left: 0;
+          border-radius: 14px;
+          background-color: #1E2026;
+          font-size: 13px;
+          text-transform: capitalize;
+          font-weight: 300;
+          font-style: italic;
+          text-align: left;
+          padding: 6px 8.5px;
+        }
       }
 
       & .leaderboard-names {
-        text-align: left;
+        justify-content: flex-start;
       }
     }
   }

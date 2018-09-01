@@ -134,7 +134,7 @@ class App extends Component {
     const { isSignedIn, imageUrl, route, boxes, isProfileOpen, user } = this.state;
     return (
       <div className="App">
-        <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange} toggleModal={this.toggleModal} />
+        <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange} toggleModal={this.toggleModal} user={this.state.user}/>
         {
           isProfileOpen &&
           <Modal>

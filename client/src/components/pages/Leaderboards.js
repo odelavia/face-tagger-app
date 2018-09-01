@@ -21,11 +21,18 @@ class Leaderboards extends Component {
   }
 
   loadUserScores = () => {
+    // { padding: "5px" }
     return this.state.users.map( (user, index) => {
+      const vertPad = index == this.state.users.length - 1
+                      ? {padding: "5px 0 0 0"}
+                      : {padding: "5px 0"}
       return (
         <div key={index} className="table-rows">
-          <div className="table-row">
-            <div className="leaderboard-avatars"></div>
+          <div className="table-row" style={vertPad}>
+            <div className="leaderboard-avatars">
+              <img src="http://tachyons.io/img/logo.jpg" alt="avatar"></img>
+              <div className="avatar-initial">{user.name[0]}</div>
+            </div>
             <div className="leaderboard-names">{index + 1}. {user.name}</div>
             <div className="leaderboard-ranks">{user.entries}</div>
             <div className="leaderboard-created-ats">{new Date(user.joined).toLocaleDateString()}</div>
@@ -37,6 +44,7 @@ class Leaderboards extends Component {
   }
 
   render() {
+    console.log(this.state.users.length)
     return (
       <Fragment>
       <h1>Leaderboards</h1>

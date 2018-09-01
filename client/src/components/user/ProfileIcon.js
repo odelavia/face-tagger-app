@@ -36,10 +36,11 @@ class ProfileIcon extends React.Component {
         <div className="icon-container">
           <div className="dropdown-toggle" onClick={this.showDropdown}>
             <img className="icon-img" src="http://tachyons.io/img/logo.jpg" alt="avatar" />
+            <div className="avatar-initial">{this.props.user.name[0]}</div>
           </div>
           <div className='dropdown-menu' style={{ display: this.state.display, marginTop: '20px', backgroundColor: 'rgba(255, 255, 255, 0.5)' }}>
             <a className="dropdown-item" onClick={() => this.props.onRouteChange('home')}>Home</a>
-            <a className="dropdown-item" onClick={() => this.props.onRouteChange('leaderboards')}>LeaderBoards</a>
+            <a className="dropdown-item" onClick={() => this.props.onRouteChange('leaderboards')}>LeaderBoard</a>
             <a className="dropdown-item" onClick={() => this.props.toggleModal()}>View Profile</a>
             <a className="dropdown-item" onClick={() => this.props.onRouteChange('signout')}>Sign Out</a>
           </div>

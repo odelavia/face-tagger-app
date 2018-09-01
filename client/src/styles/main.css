@@ -260,12 +260,31 @@ p {
   width: 64px;
   position: relative; }
   .icon-wrapper .icon-container .dropdown-toggle {
+    position: relative;
     height: 64px; }
     .icon-wrapper .icon-container .dropdown-toggle .icon-img {
       height: 64px;
       width: 64px;
       border-radius: 50%;
       box-shadow: 0 5px 10px rgba(0, 0, 0, 0.19), 0 3px 3px rgba(0, 0, 0, 0.23); }
+    .icon-wrapper .icon-container .dropdown-toggle .avatar-initial {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      display: block;
+      min-width: 34px;
+      max-width: 34px;
+      min-height: 34px;
+      max-height: 34px;
+      margin-left: 0;
+      border-radius: 17px;
+      background-color: #1E2026;
+      font-size: 13px;
+      text-transform: capitalize;
+      font-weight: 300;
+      font-style: italic;
+      text-align: left;
+      padding: 9px 11.5px; }
   .icon-wrapper .dropdown-menu {
     margin-top: 0px;
     background-color: rgba(255, 255, 255, 0.5);
@@ -498,7 +517,8 @@ label {
   padding: 10px;
   overflow: hidden; }
   .leaderboard-table .table-col-names {
-    display: flex; }
+    display: flex;
+    padding-bottom: 10px; }
     .leaderboard-table .table-col-names .table-col-name {
       width: 25%;
       margin-left: 8%; }
@@ -515,19 +535,45 @@ label {
       justify-items: center;
       text-align: left;
       height: 100%;
-      width: 100%;
-      padding: 5px 0; }
+      width: 100%; }
       .leaderboard-table .table-rows .table-row div {
+        display: flex;
         width: 25%;
         margin-left: 8%;
-        text-align: center; }
+        justify-content: center;
+        align-items: center; }
       .leaderboard-table .table-rows .table-row .leaderboard-avatars {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         min-width: 50px;
         max-width: 50px;
         min-height: 50px;
         max-height: 50px;
         border-radius: 25px;
-        background-color: grey;
         margin-left: 0; }
+        .leaderboard-table .table-rows .table-row .leaderboard-avatars img {
+          min-width: 50px;
+          max-width: 50px;
+          min-height: 50px;
+          max-height: 50px;
+          border-radius: 25px; }
+        .leaderboard-table .table-rows .table-row .leaderboard-avatars .avatar-initial {
+          position: absolute;
+          display: block;
+          min-width: 28px;
+          max-width: 28px;
+          min-height: 28px;
+          max-height: 28px;
+          margin-left: 0;
+          border-radius: 14px;
+          background-color: #1E2026;
+          font-size: 13px;
+          text-transform: capitalize;
+          font-weight: 300;
+          font-style: italic;
+          text-align: left;
+          padding: 6px 8.5px; }
       .leaderboard-table .table-rows .table-row .leaderboard-names {
-        text-align: left; }
+        justify-content: flex-start; }
