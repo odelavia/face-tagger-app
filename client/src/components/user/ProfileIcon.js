@@ -34,7 +34,7 @@ class ProfileIcon extends React.Component {
     return (
       <div className="icon-wrapper" onClick={this.toggle}>
         <div className="icon-container">
-          <div className="dropdown-toggle" onClick={this.showDropdown}>
+          <div className="dropdown-toggle" onClick={() => this.showDropdown()}>
             <img className="icon-img" src="http://tachyons.io/img/logo.jpg" alt="avatar" />
             <div className="avatar-initial">{this.props.user.name[0]}</div>
           </div>
