@@ -20,31 +20,34 @@ class Leaderboards extends Component {
     });
   }
 
-
-  render() {
-    let loadUsers = this.state.users.map( (user, index) => {
+  loadUserScores = () => {
+    return this.state.users.map( (user, index) => {
       return (
         <div key={index} className="table-rows">
           <div className="table-row">
-            <div>{user.name}</div>
-            <div>{user.entries}</div>
-            <div>{new Date(user.joined).toLocaleDateString()}</div>
-            <div>{user.age}</div>
+            <div className="leaderboard-avatars"></div>
+            <div className="leaderboard-names">{index + 1}. {user.name}</div>
+            <div className="leaderboard-ranks">{user.entries}</div>
+            <div className="leaderboard-created-ats">{new Date(user.joined).toLocaleDateString()}</div>
+            <div className="leaderboard-ages">{user.age}</div>
           </div>
         </div>
       );
     })
+  }
+
+  render() {
     return (
       <Fragment>
       <h1>Leaderboards</h1>
       <div className="leaderboard-table">
-        <div className="col-names">
-          <div className="col-name first">Name</div>
-          <div className="col-name">Rank</div>
-          <div className="col-name">Joined</div>
-          <div className="col-name last">Age</div>
+        <div className="table-col-names">
+          <div className="table-col-name first">Name</div>
+          <div className="table-col-name">Rank</div>
+          <div className="table-col-name">Joined</div>
+          <div className="table-col-name last">Age</div>
         </div>
-        {loadUsers}
+        {this.loadUserScores()}
       </div>
       </Fragment>
     );

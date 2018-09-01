@@ -493,21 +493,41 @@ label {
 
 .leaderboard-table {
   border-radius: 4px;
-  background-color: pink;
+  border: solid 2px grey;
+  background-color: transparent;
+  padding: 10px;
   overflow: hidden; }
-
-.col-names {
-  display: flex; }
-
-.col-name {
-  width: 25%; }
-  .col-name.first {
-    border-top-left-radius: 4px; }
-  .col-name.last {
-    border-top-right-radius: 4px; }
-
-.table-rows .table-row {
-  display: flex;
-  width: 100%; }
-  .table-rows .table-row div {
-    width: 25%; }
+  .leaderboard-table .table-col-names {
+    display: flex; }
+    .leaderboard-table .table-col-names .table-col-name {
+      width: 25%;
+      margin-left: 8%; }
+      .leaderboard-table .table-col-names .table-col-name.first {
+        margin-left: calc(8% + 50px);
+        border-top-left-radius: 4px; }
+      .leaderboard-table .table-col-names .table-col-name.last {
+        border-top-right-radius: 4px; }
+  .leaderboard-table .table-rows {
+    border-top: solid 1px rgba(0, 0, 0, 0.25); }
+    .leaderboard-table .table-rows .table-row {
+      display: flex;
+      align-items: center;
+      justify-items: center;
+      text-align: left;
+      height: 100%;
+      width: 100%;
+      padding: 5px 0; }
+      .leaderboard-table .table-rows .table-row div {
+        width: 25%;
+        margin-left: 8%;
+        text-align: center; }
+      .leaderboard-table .table-rows .table-row .leaderboard-avatars {
+        min-width: 50px;
+        max-width: 50px;
+        min-height: 50px;
+        max-height: 50px;
+        border-radius: 25px;
+        background-color: grey;
+        margin-left: 0; }
+      .leaderboard-table .table-rows .table-row .leaderboard-names {
+        text-align: left; }

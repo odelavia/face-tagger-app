@@ -1,35 +1,60 @@
 .leaderboard-table {
   border-radius: 4px;
-  background-color: pink;
+  border: solid 2px grey;
+  background-color: transparent;
+  padding: 10px;
   overflow: hidden;
-}
 
-.col-names {
- display: flex;
-}
+  .table-col-names {
+    display: flex;
 
-.col-name {
- width: 25%;
- // border: solid 1px black;
+    .table-col-name {
+      width: 25%;
+      margin-left: 8%;
+      // border: solid 1px black;
 
- &.first{
-  border-top-left-radius: 4px;
- }
+      &.first{
+        margin-left: calc(8% + 50px);
+        border-top-left-radius: 4px;
+      }
 
- &.last{
-  border-top-right-radius: 4px;
- }
-}
-
-.table-rows {
-
-
- .table-row {
-  display: flex;
-  width: 100%;
-
-  & div {
-   width: 25%;
+      &.last{
+        border-top-right-radius: 4px;
+      }
+    }
   }
- }
+
+  .table-rows {
+    border-top: solid 1px rgba(0, 0, 0, .25);
+
+    .table-row {
+      display: flex;
+      align-items: center;
+      justify-items: center;
+      text-align: left;
+      height: 100%;
+      width: 100%;
+      padding: 5px 0;
+
+      & div {
+      width: 25%;
+      margin-left: 8%;
+      text-align: center;
+      }
+
+      & .leaderboard-avatars {
+        min-width: 50px;
+        max-width: 50px;
+        min-height: 50px;
+        max-height: 50px;
+        border-radius: 25px;
+        background-color: grey;
+        margin-left: 0;
+      }
+
+      & .leaderboard-names {
+        text-align: left;
+      }
+    }
+  }
 }
