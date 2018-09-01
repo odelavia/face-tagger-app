@@ -1,5 +1,6 @@
 import React from 'react';
 import Logo from './Logo.js';
+import OutsideAlerter from '../user/OutsideAlerter';
 import ProfileIcon from '../user/ProfileIcon';
 
 const Navigation = ({ onRouteChange, isSignedIn, toggleModal, user }) => {
@@ -7,7 +8,9 @@ const Navigation = ({ onRouteChange, isSignedIn, toggleModal, user }) => {
     return (
       <nav>
           <Logo onRouteChange={onRouteChange}/>
-          <ProfileIcon onRouteChange={onRouteChange} toggleModal={toggleModal} user={user}/>
+          <OutsideAlerter>
+            <ProfileIcon onRouteChange={onRouteChange} toggleModal={toggleModal} user={user}/>
+          </OutsideAlerter>
       </nav>
     );
   } else {

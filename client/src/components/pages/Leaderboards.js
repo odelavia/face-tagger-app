@@ -23,7 +23,7 @@ class Leaderboards extends Component {
   loadUserScores = () => {
     // { padding: "5px" }
     return this.state.users.map( (user, index) => {
-      const vertPad = index == this.state.users.length - 1
+      const vertPad = index === this.state.users.length - 1
                       ? {padding: "5px 0 0 0"}
                       : {padding: "5px 0"}
       return (

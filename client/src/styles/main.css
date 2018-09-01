@@ -45,6 +45,11 @@ nav {
 .logo {
   cursor: pointer; }
 
+.outside-alerter {
+  grid-area: profileIcon;
+  height: 64px;
+  width: 64px; }
+
 @media (max-width: 565px) {
   .navlinks {
     grid-template-columns: 1fr; }
@@ -229,7 +234,6 @@ p {
         cursor: pointer; }
 
 .icon-wrapper {
-  grid-area: profileIcon;
   display: flex;
   justify-content: flex-end;
   height: 64px;
