@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { closeNav } from '../../actions/nav';
 
-/**
- * Component that alerts if you click outside of it
- */
-export default class OutsideAlerter extends Component {
+class OutsideAlerter extends Component {
   constructor(props) {
     super(props);
 
@@ -20,19 +19,19 @@ export default class OutsideAlerter extends Component {
     document.removeEventListener('mousedown', this.handleClickOutside);
   }
 
-  /**
-   * Set the wrapper ref
-   */
   setWrapperRef(node) {
     this.wrapperRef = node;
   }
 
   /**
-   * Alert if clicked on outside of element
+   * if clicked on outside of element
    */
   handleClickOutside(event) {
     if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
-      alert('You clicked outside of me!');
+        if ( event.target.parentNode.className === 'navbar-toggler'|| event.target.className === 'navbar-toggler') return
+        if(this.props.display === 'block' && event.target.parentNode.className !== 'navbar-toggler') {
+          this.props.dispatch(closeNav());
+      }
     }
   }
 
@@ -44,3 +43,12 @@ export default class OutsideAlerter extends Component {
 OutsideAlerter.propTypes = {
   children: PropTypes.element.isRequired,
 };
+
+const mapStateToProps = (state) => {
+ return {
+  dropdownOpen:state.nav.dropdownOpen,
+  display: state.nav.display
+ }
+}
+
+export default connect(mapStateToProps)(OutsideAlerter);
