@@ -1,8 +1,10 @@
 import React from 'react';
 
-const Logo = ({ onRouteChange }) => {
+const Logo = ({ isSignedIn, onRouteChange }) => {
     return (
-        <a className='logo' onClick={() => onRouteChange('home')}>
+        <a className='logo'
+            onClick={ isSignedIn ? () => onRouteChange('home') : () => onRouteChange('signin')}
+        >
             FaceTagger
         </a>
     );

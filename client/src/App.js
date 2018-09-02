@@ -31,6 +31,7 @@ class App extends Component {
   }
 
   componentDidMount() {
+    console.log(this.state.isSignedIn);
     const token = window.sessionStorage.getItem('token');
     if (token) {
       fetchWithBody('signin', 'POST', token, undefined)
@@ -111,14 +112,11 @@ class App extends Component {
   }
 
   onRouteChange = (route) => {
-    // console.log('route is currently ', route)
-    // console.log('IsSignedIn is currently ', this.state.isSignedIn)
     if (route === 'signout') {
       sessionStorage.removeItem('token');
       this.setState(initialState)
     } else if (route === 'home') {
       this.setState({isSignedIn: true})
-      // console.log('IsSignedIn is currently ', this.state.isSignedIn)
     }
     this.setState({route: route});
   }

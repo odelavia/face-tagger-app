@@ -21,7 +21,7 @@ class Navigation extends Component {
     if(isSignedIn) {
       return (
         <nav>
-            <Logo onRouteChange={onRouteChange}/>
+            <Logo isSignedIn={isSignedIn} onRouteChange={onRouteChange}/>
             <OutsideAlerter showDropdown={() => this.showDropdown()}>
               <ProfileIcon showDropdown={() => this.showDropdown()} onRouteChange={onRouteChange} toggleModal={toggleModal} user={user}/>
             </OutsideAlerter>
@@ -30,7 +30,7 @@ class Navigation extends Component {
     } else {
       return (
         <nav>
-          <Logo />
+          <Logo isSignedIn={isSignedIn} onRouteChange={onRouteChange} />
         </nav>
       );
     }
