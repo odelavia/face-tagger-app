@@ -10,7 +10,6 @@ class Leaderboards extends Component {
   }
 
   componentWillMount() {
-    console.log('leader will mount')
     fetchWithoutBody(`leaderboards`, 'GET')
     .then(response => response.json())
     .then(response => {
@@ -21,7 +20,6 @@ class Leaderboards extends Component {
   }
 
   loadUserScores = () => {
-    // { padding: "5px" }
     return this.state.users.map( (user, index) => {
       const vertPad = index === this.state.users.length - 1
                       ? {padding: "5px 0 0 0"}
@@ -44,7 +42,6 @@ class Leaderboards extends Component {
   }
 
   render() {
-    console.log(this.state.users.length)
     return (
       <Fragment>
       <h1>Leaderboards</h1>
